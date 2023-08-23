@@ -1,0 +1,23 @@
+* { /* Selector universal para limpiar los estilos por defecto */
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid red; */
+}
+
+main { /* Selector de etiqueta */
+    background-color: gray;
+}
+
+p {
+    background-color: red;
+}
+
+/* Selector de clase */
+.celeste {
+    background-color: darkcyan;
+}
+
+/* Selector de id */
+#Copyright {
+    background-color: blue;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+
+    <style>
+        form input {
+            /* display: block; */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Formularios</h1>
+
+    <form action="" method="GET">
+        <fieldset>
+            <legend>Datos personales</legend>
+            <label>
+                Nombre:
+                <input type="text" placeholder="Aqui escriba su nombre" name="nombre">
+            </label>
+            <label for="ApellidoInput">Apellido: </label><input type="text" id="ApellidoInput" name="apellido"> 
+            <label>
+                Edad:
+                <input type="number" name="edad" value="20">
+            </label>
+            <label>
+                Fecha de nacimiento:
+                <input type="date" name="nacimiento">
+            </label>
+            <label>
+                Email:
+                <input type="email" name="email">
+            </label>
+            <label>
+                Contraseña:
+                <input type="password" name="password">
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend>Gustos</legend>
+            <label>Comida favorita</label>
+            <label>
+                Pizza
+                <input type="radio" name="comida_favorita" value="pizza">
+            </label>
+            <label>
+                Empanadas
+                <input type="radio" name="comida_favorita" value="empanadas">
+            </label>
+            <label>
+                Hamburguesas
+                <input type="radio" name="comida_favorita" value="hamburguesas">
+            </label>
+    
+            <label>Medio de transporte</label>
+            <label>
+                Bici
+                <input type="checkbox" name="medio_transporte" value="bici">
+            </label>
+            <label>
+                Moto
+                <input type="checkbox" name="medio_transporte" value="moto">
+            </label>
+            <label>
+                Auto
+                <input type="checkbox" name="medio_transporte" value="auto">
+            </label>
+            <label>
+                Turno
+                <select name="turno">
+                    <option value="manana">Mañana</option>
+                    <option value="tarde">Tarde</option>
+                    <option value="noche">Noche</option>
+                </select>
+            </label>
+        </fieldset>
+
+        <textarea name="comentarios" placeholder="Dejanos tus comentarios"></textarea>
+        <fieldset>
+            <legend>Acciones</legend>
+            <input type="submit">
+            <input type="reset">
+        </fieldset>
+    </form>
+
+</body>
+
+</html>
