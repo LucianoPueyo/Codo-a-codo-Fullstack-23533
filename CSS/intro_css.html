@@ -11,6 +11,20 @@
             font-size: 48px;
             color: blueviolet;
         }
+
+        div {
+            width: 200px;
+            height: 100px;
+
+            background-color: red;
+
+            border: 1px solid black;
+        }
+
+        .bold {
+            font-weight: bold;
+            font-size: 1.5em;
+        }
     </style>
 </head>
 <body>
@@ -26,10 +40,10 @@
         </ul>
     </nav>
     <main>
-        <section class="celeste">
+        <section class="celeste borde">
             <h2 id="Categorias">Categorias</h2>
             <article>
-                <h3>Vehiculos</h3>
+                <h3 class="borde">Vehiculos</h3>
             </article>
             <article>
                 <h3>Tecnología</h3>
@@ -46,12 +60,29 @@
             <h2 id="Ayuda">Ayuda</h2>
             <a href="#">Ir al sitio de ayuda</a>
         </section>
+
+        <section>
+            <span>Elemento 1</span>
+            <span>Elemento 2</span>
+            <span>Elemento 3</span>
+            <span>Elemento 4</span>
+
+            <div title="Esto es un tooltip">Bloque 1</div>
+            <div id="Div2">Bloque 2</div>
+            <div>Bloque 3</div>
+            <div>Bloque 4</div>
+        </section>
+
     </main>
     <footer>
         <p id="Copyright">
             Todos los derechos reservados ©<br>
             Codo a codo 2023
         </p>
+        <a href="#">Link 1 </a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3 - <span class="bold">Esto es un texto en negrita</span></a>
+
     </footer>
 </body>
 </html>

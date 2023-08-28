@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especificidad</title>
+
+    <style>
+        p {
+            /*Selecciona todas las ocurrencias de la etiqueta p*/
+            background-color: red;
+        }
+
+        .azul {
+            /* Selecciona todas las etiquetas que lleven la clase "azul"*/
+            background-color: blue;
+        }
+
+        main section article .cyan {
+            background-color: cyan;
+        }
+
+        #Verde {
+            background-color: green;
+        }
+
+        /* En este caso el orden de definicion importa*/
+        /* La ultima deficion gana */
+        h2 {
+            background-color: darkcyan;
+        }
+
+        h2 {
+            background-color: violet;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Especificidad</h1>
+
+    <p>Parrafo 1</p>
+    <p class="azul">Parrafo 2</p>
+    <p class="azul" id="Verde">Parrafo 3</p>
+    <p class="azul" id="Verde" style="background-color: pink;">Parrafo 4</p>
+
+    <main>
+        <section>
+            <article>
+                <p class="azul cyan">Parrafo 5</p>
+            </article>
+        </section>
+    </main>
+
+    <h2>Titulo 1</h2>
+    <h2>Titulo 2</h2>
+    
+</body>
+
+</html>

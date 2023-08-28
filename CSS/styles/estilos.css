@@ -1,4 +1,5 @@
-* { /* Selector universal para limpiar los estilos por defecto */
+* { /* Selector universal */
+    /* Limpiar los estilos por defecto */
     margin: 0;
     padding: 0;
     /* border: 1px solid red; */
@@ -14,7 +15,11 @@ p {
 
 /* Selector de clase */
 .celeste {
-    background-color: darkcyan;
+    background-color: cyan;
+}
+
+.borde {
+    border: 1px solid black;
 }
 
 /* Selector de id */
