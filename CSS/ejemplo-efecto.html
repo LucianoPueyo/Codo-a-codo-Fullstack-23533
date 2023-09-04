@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Position relative</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+            box-sizing: border-box;
+        }
+
+        .mascara {
+            margin: 25px;
+            border-radius: 99px;
+            width: 100px;
+            height: 100px;
+
+            overflow: hidden;
+        }
+
+        .contenedor {
+            height: 100px;
+            width: 200px;
+            position: relative;
+            left: 0;
+        }
+
+        .contenedor:hover {
+            left: -100px;
+        }
+
+        .con-transicion {
+            transition: all 1s;
+        }
+
+        .caja {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+
+            font-size: 3em;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .roja {
+            background-color: red;
+        }
+
+        .verde {
+            background-color: green;
+        }
+        p {
+            padding: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejemplos de position</h1>
+
+    <h2>Sin transiciones</h2>
+    <div class="mascara">
+        <div class="contenedor">
+            <div class="caja roja">☺</div>
+            <div class="caja verde">☻</div>
+        </div>
+    </div>
+
+    <h2>Con transiciones</h2>
+    <div class="mascara">
+        <div class="contenedor con-transicion">
+            <div class="caja roja">☺</div>
+            <div class="caja verde">☻</div>
+        </div>
+    </div>
+
+    <h2>Explicación</h2>
+    <p>
+        - La caja mascara tiene un ancho de 100px, el mismo tamaño que las imagenes de color rojo y verde. Tiene
+        overflow
+        hidden para ocultar los excesos y un border radius elevado para que funcione como una mascara circular.
+        <br>
+        - La caja contenedor tiene un ancho fijo igual a la suma de todas las imagenes, en nuestro caso 200px porque
+        tenemos una roja y una verde, cada una de 100px. Esta caja contenedor tiene un position relative con left: 0 por
+        defecto.
+        cuando hacemos un hover (posicionamos el mouse sobre la caja) dicha propiedad cambia a left: -100px, de esta
+        forma desplazamos la caja contenedora hacia la izquierda lo mismo que mide una caja, haciendo que la roja se
+        haga invisible y la verde aparezca. El segundo ejemplo además tiene un efecto de transicion.
+        <br>
+        - Las cajas roja y verde tienen display inline-block para poder posicionarse una a la derecha de la otra.
+        Tienen un tamaño fijo de 100x100px y text-align center para que el texto este centrado. Al darle un line-height
+        de 100px (igual a la altura de la caja) podemos lograr un efecto rapido de centralizado vertical ( mas adelante
+        veremos como hacer esto con flexbox).
+    </p>
+</body>
+
+</html>

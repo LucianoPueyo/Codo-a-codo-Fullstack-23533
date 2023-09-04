@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        h2 {
+            margin-top: 25px;
+        }
+        .contenedor-relative {
+            background-color: gray;
+        }
+        .caja1 {
+            background-color: red;
+            position: relative;
+
+            /* el position: relative toma como referencia a la propia caja */
+            
+            width: 200px;
+            height: 200px;
+            /* offsets */
+            top: 15px;
+            left: 15px;
+        }
+
+        .contenedor-absolute {
+            background-color: gray;
+
+            position: relative;
+            top:0;
+            left: 25px;
+
+            width: 80%;
+            height: 400px;
+        }
+
+        .caja2 {
+            background-color: green;
+            position: absolute;
+            /*
+                "position: absolute" quita a la caja del flujo normal del documento. 
+                ademas, "position: absolute" toma como referencia al primer antecesor posicionado; 
+            */
+            
+            width: 200px;
+            height: 200px;
+            
+            /* offsets */
+            bottom: 15px;
+            right: 15px;
+        }
+
+        a{
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            background-color: red;
+
+            border-radius: 99px;
+
+            margin: 15px;
+            padding: 25px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id="Tope">Position</h1>
+    <p>
+        Si una caja tiene "position: static" dicha caja <b>no</b> está posicionada.
+        Cualquier otro valor de position (absolute, relative, fixed y sticky) "posiciona" dicha caja.
+    </p>
+
+    <h2>Position relative</h2>
+    <div class="contenedor-relative">
+        <div class="caja1">Caja 1</div>
+    </div>
+
+    <h2>Position Absolute</h2>
+    <div class="contenedor-absolute">
+        <div class="caja2"> Caja 2</div>
+    </div>
+
+    <div>
+        <a href="#Tope">Ir arriba</a>
+    </div>
+</body>
+</html>
