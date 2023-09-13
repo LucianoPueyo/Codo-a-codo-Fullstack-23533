@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudoclases</title>
+
+    <style>
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        a:link {
+            color: green;
+        }
+
+        a:visited {
+            color: darkorange;
+        }
+        
+        a:hover {
+            background-color: cadetblue;
+        }
+
+        a:active {
+            background-color: red;
+            color: white;
+        }
+
+        a:focus {
+            background-color: magenta;
+            color: yellow;
+        }
+        
+        p:hover { /* Ojo que las pseudoclases no son propias de los links */
+            /* background-color: red; */
+            cursor: not-allowed;
+        }
+
+        div p:first-child {
+            background-color: red;
+        }
+
+        div p:last-child {
+            background-color: green;
+        }
+
+        section article:nth-child(2n){
+            background-color: gray;
+        }
+        section article:nth-child(2n+1){
+            background-color: darkgrey;
+        }
+
+        p::selection{
+            background-color: magenta;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pseudoclases</h1>
+
+    <a href="#">Link1</a>
+    <a href="#Seccion1">Link2</a>
+    <a href="#">Link3</a>
+
+    <div>
+        <p>Parrafo 1</p>
+        <p>Parrafo 2</p>
+        <p>Parrafo 3</p>
+        <p>Parrafo 4</p>
+    </div>
+
+    <section>
+        <article>Articulo 1</article>
+        <article>Articulo 2</article>
+        <article>Articulo 3</article>
+        <article>Articulo 4</article>
+        <article>Articulo 5</article>
+        <article>Articulo 6</article>
+    </section>
+</body>
+</html>

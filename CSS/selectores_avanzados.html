@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores Avanzados</title>
+
+    <style>
+        /* Selectores simples  */
+        p {}
+
+        .rojo {}
+
+        #Articulo1 {}
+
+        /* Selectores compuestos */
+        /* Seleccion en cascada o Descendente */
+        main section {
+            background-color: gray;
+        }
+
+        main section article {
+            background-color: red;
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        /* Selectores de grupo */
+        nav ul li a, p {
+            display: inline-block;
+            background-color: violet;
+            width: 100px;
+            height: 50px;
+        }
+
+        /* Hijo directo */
+        #Seccion6 > article {
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Selectores Avanzados</h1>
+
+    <nav>
+        <ul>
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Seccion 1</h2>
+            <article>Articulo 1</article>
+        </section>
+        <section>
+            <h2>Seccion 2</h2>
+            <article>Articulo 2</article>
+        </section>
+        <section>
+            <h2>Seccion 3</h2>
+            <article>Articulo 3</article>
+        </section>
+        <section>
+            <h2>Section 5</h2>
+            <p>Parrafo 1</p>
+            <p>Parrafo 2</p>
+            <p>Parrafo 3</p>
+        </section>
+        <section id="Seccion6">
+            <h2>Section 6</h2>
+            <article>Articulo 2</article>
+
+            <div id="Detalle">
+                <div>
+                    <article>Articulo 10</article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <section>
+            <h2>Seccion 4</h2>
+            <article>Articulo 4</article>
+        </section>
+
+        <article>Articulo 5</article>
+        <a href="#">Link 4</a>
+        <a href="#">Link 5</a>
+        <a href="#">Link 6</a>
+    </footer>
+</body>
+
+</html>
