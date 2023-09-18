@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>media_queries</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 33%;
+            height: 500px;
+            display: inline-block;
+            font-size: 50px;
+        }
+
+        #Caja1 {
+            background-color: red;
+        }
+        #Caja2 {
+            background-color: green;
+        }
+        #Caja3 {
+            background-color: blue;
+        }
+
+        @media only screen and (max-width:600px){
+            div {
+                display: block;
+                width: 100%;
+                font-size: 16px;
+            }
+
+            p {
+                background-color: red;
+            }
+        }
+
+        @media only screen and (min-width:600px){
+            div {
+                display: inline-block;
+                width: 50%;
+                font-size: 32px;
+            }
+        }
+
+        @media only screen and (min-width:1000px){
+            div {
+                display: inline-block;
+                width: 33%;
+                font-size: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Media Queries</h1>
+    </header>
+    <main>
+        <div id="Caja1">Caja 1</div><div id="Caja2">Caja 2</div><div id="Caja3">Caja 3</div>
+    </main>
+    <footer>
+        <p>
+            Pie de página
+        </p>
+    </footer>
+</body>
+</html>
