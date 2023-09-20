@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+
+    <style>
+        .contenedor{
+            margin-top: 25px;
+            background-color: gray;
+            display: flex;
+            flex-direction: row; /* Seteo el eje principal */
+            flex-wrap: wrap; /* Permito que haya multilinea */
+            
+            justify-content: center; /* Como alinear en el eje principal*/
+            align-items: center;
+
+            padding: 10px;
+            width: 1000px;
+            height: 300px;
+        }
+
+        .item {
+            box-sizing: border-box;
+            background-color: red;
+            border: 1px solid black;
+            height: 100px;
+
+            width: 200px;
+        }
+
+        .contenedor2{
+            margin-top: 25px;
+            background-color: gray;
+            display: flex;
+            flex-direction: row; /* Seteo el eje principal */
+            flex-wrap: wrap; /* Permito que haya multilinea */
+            
+            justify-content: center; /* Como alinear en el eje principal*/
+            align-items: center;
+
+            padding: 10px;
+            width: 1000px;
+            height: 300px;
+        }
+        .item2 {
+            box-sizing: border-box;
+            background-color: red;
+            border: 1px solid black;
+            height: 100px;
+
+            flex: 1;
+        }
+
+        #Caja3{
+            flex: 2;
+        }
+
+        .centrado {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        p {
+            width: 500px;
+            height: 500px;
+            background-color: blueviolet;
+        }
+
+        article {
+            background-color: gray;
+            padding: 10px;
+            flex-direction: column;
+        }
+
+        article div {
+            background-color: darkgray;
+            height: 100px;
+            width: 75%;
+        }
+
+        section {
+            margin-top: 25px;
+            background-color: gray;
+            padding: 10px;
+            height: 500px;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        section img {
+            width: 250px;
+        }
+
+        section div {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="contenedor">
+            <div class="item">Caja1</div>
+            <div class="item">Caja2</div>
+            <div class="item">Caja3</div>
+        </div>
+    
+        <div class="contenedor2">
+            <div id="Caja1"class="item2">Caja1</div>
+            <div id="Caja2"class="item2">Caja2</div>
+            <div id="Caja3"class="item2">Caja3</div>
+            <div id="Caja4"class="item2">Caja4</div>
+        </div>
+
+        <p class="centrado">Un parrafo con un poco de texto</p>
+    
+        <article class="centrado">
+            <h2>Articulo</h2>
+            <div class="centrado">
+                El contenido del articulo
+            </div>
+        </article>
+
+        <section>
+            <h2>Una seccion con una imagen</h2>
+            <div class="centrado">
+                <img src="img/perrito.jpg" alt="Perrito">
+            </div>
+        </section>
+    </main>
+</body>
+</html>
