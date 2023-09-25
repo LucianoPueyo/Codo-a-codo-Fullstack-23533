@@ -1,0 +1,29 @@
+section {
+    background-color: gray;
+    padding: 15px;
+
+    color: white;
+}
+
+article {
+    background-color: aquamarine;   
+}
+
+aside {
+ background-color: blueviolet;
+}
+
+article, aside {
+    border: 1px solid black;
+    padding: 15px;
+}
+
+.div-interno {
+    background-color: crimson;
+    padding: 15px;
+    border: 1px solid black;
+}
+
+img {
+    width: 600px;
+}
