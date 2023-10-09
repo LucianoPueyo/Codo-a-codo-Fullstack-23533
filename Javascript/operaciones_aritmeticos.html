@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones</title>
+</head>
+<body>
+    <h1>Operaciones</h1>
+    <h2>Aritmeticas</h2>
+
+    <script>
+        var variable;
+
+        // Aritmeticas
+        // Suma, Resta
+        variable = 2 + 2;
+        console.log(variable);
+
+        variable = variable - 3;
+
+        /* 
+            En variable guarda el restultado de:
+                El valor actual de variable menos 3
+        */
+
+        console.log(variable);
+
+        // Multiplicacion y division
+        variable2 = 8;
+        variable2 = variable2 * 4;
+        console.log(variable2);
+
+        variable2 = variable2 / 5;
+        console.log(variable2);
+
+        // Exponenciacion
+        variable3 = 8 ** 2;
+        console.log(variable3);
+
+        // Forma facil de hacer raices
+        variable4 = 2 ** 0.5;
+        console.log(variable4);
+
+        // Resto de la division
+        console.log(4 / 2, 4 % 2);
+
+        // El modulo (o resto) me sirve para saber si un numero es divisible por otro
+        console.log(4 % 2); // Es 4 es divisible por 2, por lo tanto obtengo resto 0 (El numero es par).
+        console.log(5 % 2); // Es 5 no es divisible por 2, por lo tanto obtengo resto 1 (el numero es impar).
+
+        contador = 0;
+        contador++;
+        contador++;
+        contador--;
+ 
+        console.log(contador);
+
+        // Alternativamente, tenemos el operador +=
+        contador += 2; // contador = contador + 2;
+        console.log(contador);
+    </script>
+</body>
+</html>

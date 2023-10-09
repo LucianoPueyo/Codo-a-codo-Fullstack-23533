@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones</title>
+</head>
+<body>
+    <h1>Operaciones</h1>
+    <h2>Comparacion</h2>
+
+    <script>
+        var a = 8;
+        var b = 10;
+
+        // igualdad
+        console.log(a == b);
+
+        // distinto
+        console.log(a != b);
+
+        // mayor que
+        console.log(a > b);
+
+        // menor que
+        console.log(a < b);
+
+        // mayor o igual que
+        console.log(3 > 3, 3 >= 3);
+
+        // menor o igual que
+        console.log(5 < 5, 5 <= 5);
+
+        // Prompt me devuelve un string (siempre)
+        // Por lo tanto, si yo quiero operar numericamente,
+        // Necesito hacer un casteo.
+        // En este ejemplo, convertimos de string a number.
+        valor1 = Number(prompt("Ingrese un numero: "));
+        valor2 = Number(prompt("Ingrese otro numero: "));
+        valor3 = valor1 + valor2;
+
+        alert(valor3);
+        console.log( typeof valor3);
+    </script>
+</body>
+</html>
