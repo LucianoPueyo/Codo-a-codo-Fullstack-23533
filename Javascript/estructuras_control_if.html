@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructuras de control</title>
+</head>
+<body>
+    <h1>IF</h1>
+
+    <script>
+        edad = Number(prompt("Ingrese su edad"));
+        renta = confirm("Es un usuario activo? (Pagó la renta?)");
+
+        /*
+        // Ejemplo 1
+        if(edad >= 18){
+            if(renta) {
+                document.write("BIENVENIDO");
+            } else {
+                document.write("PAGUEME LA RENTA");
+            }
+        } else {
+            document.write("SOLO SE PUEDE VENDER ALCOHOL A PERSONAS DE 18 AÑOS O MAS");
+        }
+
+        */
+
+        // Ejemplo 2
+        if(edad > 18 && renta) {
+            document.write("BIENVENIDO");
+        } else {
+            document.write("SOLO SE PUEDE VENDER ALCOHOL A PERSONAS DE 18 AÑOS O MAS");
+        }
+
+    </script>
+</body>
+</html>

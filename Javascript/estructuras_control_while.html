@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructuras de control</title>
+</head>
+<body>
+    <h1>While</h1>
+
+    <script>
+        contador = 0;
+
+        // Se ejecuta 0 o mas veces.
+        while(contador < 10) {
+            console.log(contador);
+            contador++;
+        }
+
+        respuesta_incorrecta = true;
+
+        while(respuesta_incorrecta) {
+            respuesta = Number(prompt("ingrese un numero entre 1 y 10"));
+
+            if(respuesta >= 1 && respuesta <= 10){
+                respuesta_incorrecta = false;
+            }
+        }
+    </script>
+</body>
+</html>

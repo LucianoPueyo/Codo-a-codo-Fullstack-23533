@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructuras de control</title>
+</head>
+<body>
+    <h1>Switch</h1>
+
+    <ol>
+        <li>Pasta</li>
+        <li>Pizza</li>
+        <li>Empanadas</li>
+        <li>Milanesa</li>
+    </ol>
+
+    <script>
+        eleccion = Number(prompt("Elija una opcion: (1,2,3,4)"));
+
+        switch(eleccion)
+        {
+            case 1:
+                document.write("El usuario solicitó Pasta");
+                break;
+
+            case 2:
+                document.write("El usuario solicitó Pizza");
+                break;
+
+            case 3:
+                document.write("El usuario solicitó Empanadas");
+                break;
+
+            case 4:
+                document.write("El usuario solicitó Milanesa");
+                break;
+
+            default:
+                document.write("Eso no está en el menú");
+                break;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores Lógicos</title>
+</head>
+<body>
+    <h1>Operadores Lógicos</h1>
+
+    <script>
+        valor_logico = true; // o false
+        // AND Conjuncion logica
+        /*
+            La operación A && B Devuelve verdadero Unicamente cuando Ambos operandos son verdaderos.
+            En cualquier otro caso la operación es Falsa.
+
+            A | B | A && B
+            0 | 0 | 0
+            0 | 1 | 0    
+            1 | 0 | 0
+            1 | 1 | 1
+        */
+        
+        // OR Disyuncion logica
+        /*
+            La operacion A || B devuelve verdadero cuando al menos uno de sus operandos son verdaderos.
+            El unico caso donde es falso es cuando ambos operandos son falsos.
+
+            A | B | A || B
+            0 | 0 | 0
+            0 | 1 | 1
+            1 | 0 | 1
+            1 | 1 | 1
+        */
+
+        // NOT Negación logica
+        /*
+            El !(NOT) Operador Unario. Invierte el valor logico.
+
+            A | !A
+            0 | 1
+            1 | 0
+        */
+
+        A = true;
+        B = false;
+        C = false;
+        console.log(!(A && B) || C);
+    </script>
+</body>
+</html>
