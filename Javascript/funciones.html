@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones</title>
+</head>
+<body>
+    <h1>Funciones</h1>
+
+    <h2>Costos con iva</h2>
+    <div id="costosIVA">
+    </div>
+
+    <script>
+        let bici = 1000;
+        let moto = 5000;
+        let auto = 25000;
+
+        function calcularIVA(costo){
+            return costo * 1.21;
+        }
+
+        function generarMensaje(nombre_producto, precio_lista, costo_final){
+            return `<p>Producto: <b>${nombre_producto}</b> - precio de lista: <b>${precio_lista}</b> - Precio final: <b>${costo_final}</b></p>`;
+        }
+
+        function renderizarCostoConIva(nombre_producto, precio_lista){ // Definir una fucion
+            // precio con IVA
+            costo_final = calcularIVA(precio_lista);
+            mensaje = generarMensaje(nombre_producto, precio_lista, costo_final);
+            console.log(nombre_producto, costo_final);
+            
+            // Manipulación del DOM
+            document.getElementById("costosIVA").innerHTML += mensaje;
+        }
+
+        // Invocar a una funcion
+        renderizarCostoConIva('Bicicleta BMX', bici); 
+        renderizarCostoConIva('Motito', moto);
+        renderizarCostoConIva('Reanult 12', auto);
+        renderizarCostoConIva('Celular', 10500);
+
+        function saludar() {
+            console.log("Hola como estas");
+        }
+        
+        // Funciones Flecha (Son un tipo de funcion anonima)
+        saludo = nombre => console.log("Hola como estas " + nombre);
+
+        saludo("Carlos");
+
+        resultado = saludar();
+        console.log(resultado);
+    </script>
+</body>
+</html>

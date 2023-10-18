@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos de Fetch API</title>
+</head>
+<body>
+    <script>
+        // https://www.freecodecamp.org/espanol/news/tutorial-de-fetch-api-en-javascript-con-ejemplos-de-js-fetch-post-y-header/
+        fetch('https://randomuser.me/api')
+        // Exito
+        .then(response => response.json())  // convertir a json
+        .then(json => console.log(json))    //imprimir los datos en la consola
+        .catch(err => console.log('Solicitud fallida', err)); // Capturar errores
+
+
+        // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+        async function logMovies() {
+            const response = await fetch("https://randomuser.me/api");
+            const movies = await response.json();
+            console.log(movies);
+        }
+
+        logMovies();
+    </script>
+</body>
+</html>

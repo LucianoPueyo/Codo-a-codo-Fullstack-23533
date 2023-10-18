@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <h1>Arrays</h1>
+
+    <div id="Notas"></div>
+
+    <script>
+        let notas_alumnos = [6, 4, 7, 9];
+
+        // Cosultar valores
+        console.log(notas_alumnos[0]);
+        console.log(notas_alumnos[3]);
+        console.log(notas_alumnos[4]); // undefined
+
+        console.log(notas_alumnos);
+
+        // Modificar valores
+        notas_alumnos[0] = 8;
+        console.log(notas_alumnos);
+
+        // Agregar valores
+        notas_alumnos.push(10);
+        console.log(notas_alumnos);
+
+        // Quitar Valroes
+        notas_alumnos.pop();
+        console.log(notas_alumnos);
+        notas_alumnos.pop();
+        console.log(notas_alumnos);
+
+        // cantidad de elementos
+        console.log(notas_alumnos.length);
+
+        notas_alumnos.push(10);
+        notas_alumnos.push(10);
+        notas_alumnos.push(10);
+        notas_alumnos.push(10);
+        
+        console.log(notas_alumnos);
+
+        console.log(notas_alumnos.length);
+
+        // Obteniendo el primer elemento
+        console.log(notas_alumnos[0]);
+
+        // Obteniendo el ultimo elemento
+        console.log(notas_alumnos[notas_alumnos.length - 1]);
+    
+        // Iteracion
+        //               0  1  2  3
+        notas_alumnos = [6, 4, 7, 9];
+        for (let i = 0; i < notas_alumnos.length; i++) {
+            document.getElementById("Notas").innerHTML += `<p>Nota ${i+1}: ${notas_alumnos[i]}</p>`;
+        }
+    </script>
+</body>
+</html>
