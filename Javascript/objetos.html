@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+</head>
+<body>
+    <h1>Objetos</h1>
+
+
+    <script>
+        // Con este ejemplo nos damos cuenta que tal vez
+        // los arrays no son la mejor forma de representar los datos de un alumn
+        // AL MENOS EN ESTE CONTEXTO.
+        alumnos = [
+            ["Carlos", "Lopez", 1234, 8],
+            ["Maria", "Del Cerro", 5678, 10],
+            [9876, 7,"Perez", "Gaston"],
+        ];
+
+        // console.log(alumnos[0][0]);
+        console.log(alumnos[0][2]);
+        console.log(alumnos[1][2]);
+        console.log(alumnos[2][2]);
+
+        // Usemos objetos para representar algunos alumnos
+        alumnos2 = [
+            {
+                nombre: "Carlos",
+                apellido: "Lopez",
+                dni: 1234,
+                nota: 8,
+                nombre_completo: function() {
+                    return `${this.nombre} ${this.apellido}`; 
+                }
+            },
+            {
+                "nombre": "Maria",
+                "apellido": "Del Cerro",
+                "dni": 5678,
+                'nota': 10,
+                nombre_completo: function() {
+                    return this.nombre + " " + this.apellido; 
+                }
+            },
+            {
+                "dni": 9876,
+                'nota': 7,
+                "apellido": "Perez",
+                "nombre": "Gaston",
+                nombre_completo: function() {
+                    return `${this.nombre} ${this.apellido} ${this.dni} ${this.nota}`; 
+                }
+            },
+        ];
+
+        // Accedo a alguno de los campos del primer alumno
+        console.log(alumnos2[0].nombre);
+        console.log(alumnos2[0]['nombre']);
+
+        console.log(alumnos2[2].nombre);
+
+        console.log(alumnos2[1].nombre_completo());
+        console.log(alumnos2[2].nombre_completo());
+
+        // Definamos una clase Alumno
+        class Alumno {
+            constructor(nombre, apellido, dni, nota) {
+                this.nombre = nombre;
+                this.apellido = apellido;
+                this.dni = dni;
+                this.nota = nota;
+            }
+
+            nombre_completo() {
+                return `${this.nombre} ${this.apellido}`;
+            }
+        }
+
+        alumnos3 = [
+            new Alumno('Carlos', 'Lopez', 1234, 8),
+            new Alumno('Maria', 'Del Cerro', 5678, 10),
+            new Alumno('Gaston', 'Perez', 9867, 7),
+        ];
+
+        for (const alumno of alumnos3) {
+            console.log(alumno.nombre_completo());
+        }        
+
+        let nombre = prompt("Ingrese el nombre del alumno");
+        let apellido = prompt("Ingrese el apellido del alumno");
+        let dni = Number(prompt("Ingrese el dni del alumno"));
+        let nota = Number(prompt("Ingrese la nota del alumno"));
+
+        nuevo_alumno = new Alumno(nombre, apellido, dni, nota);
+
+        console.log(nuevo_alumno);
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+    <h1>JSON</h1>
+
+    <script>
+        let objeto1 = {
+            nombre: "Carlos",
+            apellido: "Lopez"
+        }     
+
+        console.log(objeto1);
+        console.log(JSON.stringify(objeto1));
+        console.log(typeof objeto1);
+        console.log(typeof JSON.stringify(objeto1));
+
+        let objetoComoString = '{"nombre":"Carlos","apellido":"Lopez"}';
+
+        let objetoResultante = JSON.parse(objetoComoString);
+        console.log(typeof objetoComoString);
+        console.log(typeof objetoResultante);
+
+        console.log(objetoResultante.nombre);
+        console.log(objetoResultante.apellido);
+    </script>
+</body>
+</html>

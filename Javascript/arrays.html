@@ -10,6 +10,9 @@
 
     <div id="Notas"></div>
 
+    <h2>Las mismas notas obtenidas de otra forma:</h2>
+    <div id="NotasForOf"></div>
+
     <script>
         let notas_alumnos = [6, 4, 7, 9];
 
@@ -55,9 +58,20 @@
         // Iteracion
         //               0  1  2  3
         notas_alumnos = [6, 4, 7, 9];
-        for (let i = 0; i < notas_alumnos.length; i++) {
+
+        // For "clasico"
+        for (let i = 0; i < 4; i++) {
             document.getElementById("Notas").innerHTML += `<p>Nota ${i+1}: ${notas_alumnos[i]}</p>`;
+            console.log(notas_alumnos[i]);
         }
+
+        // For each
+        // for .. of
+
+        for (const nota_alumno of notas_alumnos) {
+            document.getElementById("NotasForOf").innerHTML += `<p>Nota ${nota_alumno}</p>`;
+            console.log(nota_alumno);
+        }        
     </script>
 </body>
 </html>
