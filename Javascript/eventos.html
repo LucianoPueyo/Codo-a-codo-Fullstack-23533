@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="Boton1" OnClick="CambioTexto()">Soy un boton 1</button>
+    <br>
+    <button id="Boton2">Soy un boton 2</button>
+
+    <script>
+
+        function CambioTexto() {
+            document.querySelector("#Boton1").textContent = "ESTE BOTON HA SIDO ALTERADO PROGRAMATICAMENTE";
+        }
+
+        function saludar() {
+            alert("HOLA MUNDO DE EVENTOS");
+        }
+
+        document.querySelector("#Boton2").onclick = saludar;
+
+
+    </script>
+</body>
+</html>

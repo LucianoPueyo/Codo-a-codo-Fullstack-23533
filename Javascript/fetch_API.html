@@ -1,28 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejemplos de Fetch API</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            height: 100vh;
+            background-color: rgb(200,200,200);
+
+            display: flex;
+            flex-direction: column;
+        }
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            flex: 10;
+        }
+
+        header {
+            flex: 1;
+        }
+
+        footer {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header, footer {
+            padding: 25px;
+        }
+
+        article {
+            background-color: rgb(100,100,100);
+            padding: 25px;
+
+            border-radius: 25px;
+        }
+
+        article img {
+            height: 100px;
+            border-radius: 999px;
+        }
+
+        article p {
+            padding: 10px;
+            background-color: white;
+            border-radius: 999px;
+        }
+
+        #Usuario #Foto {
+            border: 5px solid red;
+        }
+    </style>
 </head>
+
 <body>
+    <header>
+        <h1>Ejemplo de Fetch a una API</h1>
+    </header>
+    <main>
+        <article id="Usuario">
+            <img id="Foto" src="" alt="Foto perfil">
+            <p>Nombre: <span id="Name"></span></p>
+            <p>Apellido: <span id="LastName"></span></p>
+        </article>
+    </main>
+    <footer>
+        <p>Todos los Derechos registrados 2023</p>
+    </footer>
     <script>
         // https://www.freecodecamp.org/espanol/news/tutorial-de-fetch-api-en-javascript-con-ejemplos-de-js-fetch-post-y-header/
         fetch('https://randomuser.me/api')
-        // Exito
-        .then(response => response.json())  // convertir a json
-        .then(json => console.log(json))    //imprimir los datos en la consola
-        .catch(err => console.log('Solicitud fallida', err)); // Capturar errores
+            // Exito
+            .then(response => response.json())  // convertir a json
+            .then(json => console.log(json))    //imprimir los datos en la consola
+            .catch(err => console.log('Solicitud fallida: ', err)); // Capturar errores
 
 
         // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-        async function logMovies() {
+        async function logRandomUser() {
             const response = await fetch("https://randomuser.me/api");
-            const movies = await response.json();
-            console.log(movies);
+            const user = await response.json();
+            // console.log(user);
+            console.log(user.results[0].name.first);
+            console.log(user.results[0].name.last);
+            console.log(user.results[0].picture.thumbnail);
+
+            document.querySelector("#Usuario #Foto").src = user.results[0].picture.thumbnail;
+            document.querySelector("#Usuario #Name").textContent = user.results[0].name.first;
+            document.querySelector("#Usuario #LastName").textContent = user.results[0].name.last;
+
+
+            // Ejemplo con la PokeAPI
+            fetch('https://pokeapi.co/api/v2/pokemon/ditto')
+            .then(response => response.json())  // convertir a json
+            .then(json => console.log(json))    //imprimir los datos en la consola
         }
 
-        logMovies();
+        logRandomUser();
+
     </script>
 </body>
+
 </html>
