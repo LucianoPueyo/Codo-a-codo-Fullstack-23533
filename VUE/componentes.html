@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componentes VUE.js</title>
+</head>
+<body>
+    <div id="app">
+        <v-header></v-header>
+        <section>
+            <h2>{{curso}}</h2>
+            <p>{{mensaje}}</p>
+        </section>
+        <section>
+            <h2>Directivas</h2>
+            <p v-text="descripcion"></p>
+            <article v-show="inscripciones_abiertas">
+                <p>Aprovechá para inscribirte en Codo a Codo 2024!</p>
+                <ul>
+                    <li v-for="curso in cursos">
+                        {{curso}}
+                    </li>
+                </ul>
+            </article>
+            <p v-if="!inscripciones_abiertas">
+                Estate atento a las inscripciones 2024!
+            </p>
+        </section>
+
+        <v-header></v-header>
+
+        <footer v-html="footer_content"></footer>
+    </div>   
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const { createApp } = Vue;
+
+        const header = {
+            template: `
+            <header>
+                <h1>Componentes VUE</h1>
+                <p>Año {{año}}</p>
+                <nav>
+                    <ul>
+                        <li v-for="link in links">
+                            {{ link }}
+                        </li>
+                    </ul>
+                </nav>
+            </header>`,
+            data(){
+                return {
+                    año: 2023,
+                    links: ["Link 1", "Link 2", "Link 3"]
+                }
+            }
+        }; 
+
+        createApp({
+            components: {
+                "v-header": header
+            },
+
+            data() {
+                return {
+                    mensaje: "Hola Mundo Vue",
+                    curso: "Codo a codo",
+                    descripcion: "Esta es una descripcion mas detallada del curso de Codo a Codo",
+                    footer_content: "<p>2023 - todos los derechos reservados <span>Codo a Codo</span></p>",
+                    inscripciones_abiertas: true,
+                    cursos: ["Fullstack Python", "UX/UI", "Testing/QA"]
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>

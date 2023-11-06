@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro a Vue</title>
+</head>
+<body>
+    <div id="app">
+        <header></header>
+        <h1>Intro a VUE</h1>
+
+        <h2>Bienvenid@ {{usuario}}</h2>
+        <p>{{mensaje}}</p>
+        <p>{{curso}}</p>
+
+    </div>
+
+    <div id="texto"></div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const {createApp} = Vue;
+        createApp({
+            data(){
+                return {
+                    mensaje: "Hola Mundo VUE",
+                    curso: "Codo a Codo 2023",
+                    usuario: "Josefina"
+                }
+            }
+
+        }).mount("#app");
+    </script>
+</body>
+</html>
