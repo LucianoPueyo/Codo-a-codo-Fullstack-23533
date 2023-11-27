@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de tareas</title>
+</head>
+<body>
+    <header>
+        <h1>Listado de tareas activas</h1>
+        <nav>
+            <ul>
+                <li>Link 1</li>
+                <li>Link 2</li>
+                <li>Link 3</li>
+            </ul>
+        </nav>
+
+        {% if usuario_activo %}
+            <p style="background-color: Green">Activo</p>
+        {% else %}
+            <p style="background-color: Red">Inactivo</p>
+        {% endif %}
+    </header>
+    <main>
+        <ul>
+            {% for tarea in listado_tareas %}
+                <li>{{tarea | upper}}</li>
+
+            {% empty %}
+                <li>No hay Tareas cargadas</li>
+            {% endfor %}
+        </ul>
+    </main>
+    <footer>
+        Todos los derechos reservados - Codo a Codo 2023.
+    </footer>
+</body>
+</html>
+
