@@ -2,13 +2,15 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from datetime import datetime
 
+from .models import Tarea
+
 
 def index(request):
 
     # La data real eventualmente será obtenida de la BBDD
 
     context = {
-        'username': 'Gastón',
+        'username': 'Raul',
         'fecha_hoy': datetime.now(),
         'edad': 25
     }
@@ -19,13 +21,8 @@ def crear_tarea(request):
     return HttpResponse("Trabajo en progreso - En esta vista se van a poder dar de alta nuevas tareas")
 
 def tareas_listado(request):
-
-    # Esta lista esta hardcodeada.
-    # Eventualmente, seremos capaces de obtener esta data de una BBDD Real.
-    listado_tareas = [
-        'Tarea 1',
-        'Tarea 2'
-    ]
+    # Estoy yendo a la BBDD a buscar todas las tareas
+    listado_tareas = Tarea.objects.all()
 
     context = {
         'listado_tareas': listado_tareas,

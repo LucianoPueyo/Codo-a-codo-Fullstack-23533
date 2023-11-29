@@ -1,14 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de Tareas</title>
-</head>
-<body>
-    <h1>Listado de Tareas</h1>
-    <h2>Bienvenid@ {{username}}</h2>
+{% extends "web/base.html" %}
+{% load static %}
+
+{% block title %} Bienvenida {% endblock %}
+{% block section_title %} Bienvenid@ {{username}} {% endblock %}
+
+{% block extra_css %} 
+    <link rel="stylesheet" href="{% static 'web/css/index.css' %} ">
+{% endblock %}
+
+{% block main %}
+    <p class="descripcion">Una descripcion breve de lo que hace este sitio</p>
     <p>{{edad}}</p>
     <p>Buenos Aires Argentina - {{fecha_hoy}} - 2023</p>
-</body>
-</html>
+{% endblock %}

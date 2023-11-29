@@ -1,0 +1,8 @@
+.descripcion {
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: burlywood;
+}

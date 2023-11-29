@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tareas 1.0 {% block title %}{% endblock %}</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Rubik+Iso&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'web/css/base.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <header>
+        <h1>Administración de Tareas 1.0</h1>
+        <h2>{% block section_title %}{% endblock %}</h2>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'tareas_listado' %}">Listado tareas</a></li>
+                <li><a href="{% url 'tareas_crear' %}">Crear</a></li>
+                <li><a href="#">Modificar</a></li>
+                <li><a href="#">Borrar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block main %}{% endblock %}
+    </main>
+    <footer>
+        <p>Todos los derechos reservados - Codo a Codo 2023</p>
+    </footer>
+</body>
+</html>

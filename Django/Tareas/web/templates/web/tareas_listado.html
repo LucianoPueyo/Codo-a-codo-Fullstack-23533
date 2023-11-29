@@ -1,40 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de tareas</title>
-</head>
-<body>
-    <header>
-        <h1>Listado de tareas activas</h1>
-        <nav>
-            <ul>
-                <li>Link 1</li>
-                <li>Link 2</li>
-                <li>Link 3</li>
-            </ul>
-        </nav>
+{% extends "web/base.html" %}
 
-        {% if usuario_activo %}
-            <p style="background-color: Green">Activo</p>
-        {% else %}
-            <p style="background-color: Red">Inactivo</p>
-        {% endif %}
-    </header>
-    <main>
-        <ul>
-            {% for tarea in listado_tareas %}
-                <li>{{tarea | upper}}</li>
+{% block title %} Listado {% endblock %}
+{% block section_title %} Listado de tareas pendientes {% endblock %}
 
-            {% empty %}
-                <li>No hay Tareas cargadas</li>
-            {% endfor %}
-        </ul>
-    </main>
-    <footer>
-        Todos los derechos reservados - Codo a Codo 2023.
-    </footer>
-</body>
-</html>
+{% block extra_css %}{% endblock %}
 
+{% block main %}
+    {% if usuario_activo %}
+        <p style="background-color: Green">Activo</p>
+    {% else %}
+        <p style="background-color: Red">Inactivo</p>
+    {% endif %}
+    <section>
+        {% for tarea in listado_tareas %}
+            <article>
+                <p>{{tarea.titulo}}</p>
+                <p>{{tarea.descripcion}}</p>
+                <p>{{tarea.categoria}}</p>
+                <p>{{tarea.fecha_fin}}</p>
+            </article>
+
+        {% empty %}
+            <article>
+                No hay tareas cargadas.
+            </article>
+        {% endfor %}
+
+    </section>
+{% endblock %}
