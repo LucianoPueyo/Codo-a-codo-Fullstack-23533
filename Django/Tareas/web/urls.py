@@ -4,9 +4,12 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('crear', views.crear_tarea, name='tareas_crear'),
-    path('listado', views.tareas_listado, name='tareas_listado'),
-    
+    path('listado', views.TareasListView.as_view(), name='tareas_listado'),
+    path('crear', views.TareasCreateView.as_view(), name='tareas_crear'),
+    path('detalle/<pk>', views.TareasDetailView.as_view(), name='tareas_detalle'),
+    path('modificar/<pk>', views.TareasUpdateView.as_view(), name='tareas_modificar'),
+    path('borrar/<pk>', views.TareasDeleteView.as_view(), name='tareas_borrar'),
+
     # Ejemplo de Url parametrizada
     path('saludar/<str:nombre_usuario>', views.saludar_por_nombre, name='saludar_por_nombre')
 ]

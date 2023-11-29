@@ -1,0 +1,65 @@
+section {
+    background-color: burlywood;
+
+    flex: 1;
+    width: 100%;
+
+    padding: 20px;
+}
+
+h3 span {
+    font-weight: 400;
+}
+
+section article {
+    background-color: aliceblue;
+    padding: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 15px 0;
+}
+
+.fecha {
+    font-weight: 100;
+}
+
+section article .acciones {
+    background-color: rgba(0,0,0, .2);
+    padding: 15px;
+}
+
+section article .acciones a {
+    padding: 15px;
+    background-color: white;
+
+    display: inline-block;
+    width: 150px;
+    
+    text-align: center;
+
+    text-decoration: none;
+
+    border-radius: 15px;
+
+    margin: 0 5px;
+    color: white;
+
+    transition: all 0.2s;
+}
+
+section article .acciones a.ver{
+    background-color: gray;
+}
+section article .acciones a.modificar{
+    background-color: cornflowerblue;
+}
+section article .acciones a.borrar{
+    background-color: crimson;
+}
+
+section article .acciones a:hover {
+    background-color: black;
+} 

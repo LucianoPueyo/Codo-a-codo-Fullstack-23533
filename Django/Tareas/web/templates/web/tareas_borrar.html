@@ -1,0 +1,21 @@
+{% extends "web/base.html" %}
+{% load static %}
+
+{% block title %} Borrado de Tarea {% endblock %}
+{% block section_title %} Borrado de Tarea {% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'tareas_borrar.css' %}">
+{% endblock %}
+
+{% block main %}
+    <article>
+        <h3>Borrar Tarea</h3>
+        <form method="post">
+            {% csrf_token %}
+            <p>Estás seguro de querer borrar: "<b>{{ object }}</b>"?</p>
+            {{ form }}
+            <input type="submit" value="Confirm">
+        </form>
+    </article>
+{% endblock %}

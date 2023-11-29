@@ -1,0 +1,20 @@
+{% extends "web/base.html" %}
+{% load static %}
+
+{% block title %} Modificar Tarea {% endblock %}
+{% block section_title %} Modificar Tarea {% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'web/css/tareas_modificar.css' %}">
+{% endblock %}
+
+{% block main %}
+    <article>
+        <h3>Datos de la Tarea</h3>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Actualizar">
+        </form>
+    </article>
+{% endblock %}

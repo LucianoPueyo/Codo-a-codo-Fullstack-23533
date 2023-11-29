@@ -1,0 +1,17 @@
+{% extends "web/base.html" %}
+{% load static %}
+
+{% block title %} Detalle de Tarea {% endblock %}
+{% block section_title %} Detalle de Tarea {% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'web/css/tareas_detalle.css' %}">
+{% endblock %}
+
+{% block main %}
+    <article>
+        <h3>{{object.titulo}} ({{object.categoria}})</h3>
+        <p>Finaliza el {{object.fecha_fin}}</p>
+        <p>{{object.descripcion}}</p>
+    </article>
+{% endblock %}

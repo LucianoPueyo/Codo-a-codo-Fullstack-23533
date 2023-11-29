@@ -1,0 +1,21 @@
+{% extends "web/base.html" %}
+{% load static %}
+
+{% block title %} Crear nueva Tarea {% endblock %}
+{% block section_title %} Crear nueva Tarea {% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'tareas_crear.css' %}">
+{% endblock %}
+
+{% block main %}
+    <article>
+        <h3>Complete los campos para la nueva Tarea</h3>
+        <form method="POST" action="{% url 'tareas_crear' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+    
+            <input type="submit">
+        </form>
+    </article>
+{% endblock %}

@@ -2,14 +2,16 @@
 {% load static %}
 
 {% block title %} Bienvenida {% endblock %}
-{% block section_title %} Bienvenid@ {{username}} {% endblock %}
+{% block section_title %} Codo a codo 2023 {% endblock %}
 
 {% block extra_css %} 
     <link rel="stylesheet" href="{% static 'web/css/index.css' %} ">
 {% endblock %}
 
 {% block main %}
-    <p class="descripcion">Una descripcion breve de lo que hace este sitio</p>
-    <p>{{edad}}</p>
-    <p>Buenos Aires Argentina - {{fecha_hoy}} - 2023</p>
+    <p class="descripcion">
+        Esta es una aplicación web de pruebas para la gestión de tareas pendientes.
+        <br>
+        Realizado en el curso de Fullstack Python 2do Cuatrimestre 2023.
+    </p>
 {% endblock %}

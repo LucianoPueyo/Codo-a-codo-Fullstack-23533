@@ -1,23 +1,28 @@
 {% extends "web/base.html" %}
+{% load static %}
 
 {% block title %} Listado {% endblock %}
 {% block section_title %} Listado de tareas pendientes {% endblock %}
 
-{% block extra_css %}{% endblock %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'web/css/tareas_listado.css' %}">
+{% endblock %}
 
 {% block main %}
-    {% if usuario_activo %}
-        <p style="background-color: Green">Activo</p>
-    {% else %}
-        <p style="background-color: Red">Inactivo</p>
-    {% endif %}
     <section>
-        {% for tarea in listado_tareas %}
+        {% for tarea in tareas_listado %}
             <article>
-                <p>{{tarea.titulo}}</p>
-                <p>{{tarea.descripcion}}</p>
-                <p>{{tarea.categoria}}</p>
-                <p>{{tarea.fecha_fin}}</p>
+                <div class="contenido">
+                    <h3>{{tarea.titulo}} - <span>[ {{tarea.categoria}} ]</span></h3>
+                    <p>{{tarea.descripcion}}</p>
+                    <p></p>
+                    <p class="fecha">{{tarea.fecha_fin}}</p>
+                </div>
+                <div class="acciones">
+                    <a class="ver" href="{% url 'tareas_detalle' pk=tarea.id %}">Ver</a>
+                    <a class="modificar" href="{% url 'tareas_modificar' pk=tarea.id %}">Modificar</a>
+                    <a class="borrar" href="{% url 'tareas_borrar' pk=tarea.id %}">Borrar</a>
+                </div>
             </article>
 
         {% empty %}
